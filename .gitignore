@@ -1,0 +1,28 @@
+# Gradle
+.gradle/
+.kotlin/
+build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Keystores
+*.jks
+*.keystore
+
+# 本地构建日志与临时产物
+build.log
+*.apk
+*.log
+
+# 真机调试抓屏 / 无障碍导出的临时文件
+out*.png
+ui*.xml
+ui-nodes*.txt
+tmp-probe.txt

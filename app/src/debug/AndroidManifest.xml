@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 仅 debug 构建：用于在无法注入触摸事件的环境下做端到端验证 -->
+    <application>
+        <receiver
+            android:name="com.lizl.bandremind.debug.DebugReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.lizl.bandremind.debug.SEED" />
+                <action android:name="com.lizl.bandremind.debug.FIRE" />
+                <action android:name="com.lizl.bandremind.debug.LIST" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

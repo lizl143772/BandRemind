@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">腕上提醒</string>
+    <string name="notification_channel_name">定时提醒</string>
+    <string name="notification_channel_desc">喝水、吃药等定时提醒，会同步到小米手表</string>
+</resources>

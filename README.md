@@ -27,6 +27,23 @@ Android 原生 Kotlin + Jetpack Compose，无账号、无网络请求、无广�
 
 ---
 
+## 下载安装
+
+当前版本 **0.0.1**，从 [Releases 页面](https://github.com/lizl143772/BandRemind/releases) 下载 `BandRemind-0.0.1.apk`。
+
+| 项目 | 要求 |
+|---|---|
+| 系统版本 | Android 8.0（API 26）及以上 |
+| 架构 | 全部（universal APK） |
+| 权限 | 通知、精确闹钟、开机自启、忽略电池优化 |
+
+安装步骤：下载 APK → 允许「安装未知来源应用」→ 点安装 → 打开后授予通知权限 → 进「设置」页把精确闹钟和电池优化也处理掉。
+
+> 手表端震动还需要在**小米运动健康 → 设备 → 通知与通话 → App 通知 → 同步所有通知**里打开，
+> 打开后本 App 的通知不需要加白名单就会自动镜像到 Redmi Watch 5/6。
+
+---
+
 ## 界面
 
 - **渐变主卡 + 倒计时圆环**：首页顶部是一张品牌渐变卡，圆环实时显示「距下一次提醒还剩多少」，
@@ -111,12 +128,29 @@ Redmi Watch 5/6 跑的是 HyperOS 2 / Vela，**可以直接装独立快应用**�
 ./gradlew.bat :app:assembleDebug        # Windows
 ./gradlew :app:assembleDebug             # macOS / Linux
 
+./gradlew.bat :app:assembleRelease       # 出可安装的正式包
 ./gradlew.bat :app:testDebugUnitTest     # 跑纯逻辑单元测试
 ```
 
-产物：`app/build/outputs/apk/debug/app-debug.apk`
+产物：`app/build/outputs/apk/debug/app-debug.apk`、`app/build/outputs/apk/release/app-release.apk`
 
 > `local.properties` 需要指向本机 SDK，例如 `sdk.dir=E\:\\AndroidStudio\\sdk`
+
+### release 签名
+
+正式包用项目自带的证书签名，签名配置放在**仓库根目录的 `keystore.properties`**，
+私钥 `bandremind-release.jks` 一并被 `.gitignore` 排除，不进版本库：
+
+```properties
+storeFile=bandremind-release.jks
+storePassword=...
+keyAlias=bandremind
+keyPassword=...
+```
+
+- 没有这两个文件时，`assembleRelease` 仍能编过，但产出的是**未签名**包，装不上手机。
+- 证书指纹（SHA-256）：`67:B1:69:88:FA:51:E6:9A:A5:D4:E4:58:91:52:46:72:E2:50:48:20:82:DD:2B:6F:3E:72:85:42:9E:95:C1:65`
+- 后续版本请用同一份签名，否则用户无法覆盖升级。
 
 ---
 

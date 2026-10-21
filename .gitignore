@@ -15,6 +15,7 @@ captures/
 # Keystores
 *.jks
 *.keystore
+keystore.properties
 
 # 本地构建日志与临时产物
 build.log

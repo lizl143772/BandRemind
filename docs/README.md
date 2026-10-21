@@ -12,3 +12,9 @@
 | `screenshot-edit.png` | 编辑提醒页 —— 打开一条已有规则 |
 | `screenshot-settings.png` | 设置页 —— 手表同步指引 + 权限体检 + 测试推送 |
 | `screenshot-dark.png` | 深色模式下的首页 |
+
+文档：
+
+| 文件 | 内容 |
+|---|---|
+| `vela-research.md` | 手表端 Vela 快应用的可行性调研 —— 能力盘点、硬约束、最小验证方案、工程量与风险 |
